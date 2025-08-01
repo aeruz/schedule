@@ -3,68 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drake's Schedule</title>
+    <title>School Announcements and Reminders</title>
+    <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 p-4 md:p-8">
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
 
-    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-10 border border-gray-200">
-        <div class="flex justify-between items-center mb-6">
-            <h1 class="text-2xl md:text-3xl font-extrabold text-indigo-900 pb-2 border-b-4 border-indigo-600">
-                Drake's Schedule
-            </h1>
-            <a href="index.html" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-xl transition-colors duration-200 text-sm md:text-base shadow">
-                Back to Home
-            </a>
+    <!-- Main card container for all announcements -->
+    <div class="bg-white max-w-xl w-full p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-200">
+        <!-- Main title -->
+        <h1 class="text-3xl font-bold text-center text-indigo-700 mb-6">School Announcements & Reminders</h1>
+
+        <!-- Fire Drill Announcement Section -->
+        <div class="mb-6 pb-6 border-b border-gray-200">
+            <h2 class="text-xl font-semibold text-red-600 mb-2">Fire Drill Announcement</h2>
+            <p class="text-sm text-gray-500 mb-4">Date: July 30, 2025</p>
+            
+            <p class="text-gray-700 mb-2">
+                A fire drill will be conducted on <span class="font-medium text-red-600">August 1, 2025 (Friday)</span> by the Minglanilla Fire Department.
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-gray-600 pl-4">
+                <li>This is to ensure the safety and preparedness of all students.</li>
+                <li>Preschool to Grade 3 will have a half-day session.</li>
+                <li>Pick-up time for Preschool to Grade 3 is from <span class="font-medium">9:45 AM to 11:30 AM</span>.</li>
+            </ul>
+        </div>
+
+        <!-- Nutrition Month Activity Section -->
+        <div class="mb-6 pb-6 border-b border-gray-200">
+            <h2 class="text-xl font-semibold text-indigo-600 mb-2">Nutrition Month Culminating Activity</h2>
+            <p class="text-sm text-gray-500 mb-4">Date: July 31, 2025</p>
+            
+            <p class="text-gray-700 mb-2">Please be reminded of the following for the activity:</p>
+            <ul class="list-disc list-inside space-y-1 text-gray-600 pl-4">
+                <li>Bring the assigned ingredients.</li>
+                <li>Wear a headdress.</li>
+                <li>Wear your P.E. uniform.</li>
+            </ul>
+            
+            <p class="mt-4 text-gray-700">
+                Pick-up time for all students is between <span class="font-medium text-indigo-600">1:00 PM and 2:30 PM</span>.
+            </p>
         </div>
         
-        <h2 class="text-xl md:text-2xl font-bold text-indigo-800 mb-4">Weekly Schedule</h2>
-        <div class="overflow-x-auto">
-            <table class="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
-                <thead class="bg-indigo-600 text-white">
-                    <tr>
-                        <th class="py-3 px-4 text-left font-semibold">Time</th>
-                        <th class="py-3 px-4 text-left font-semibold">Monday</th>
-                        <th class="py-3 px-4 text-left font-semibold">Tuesday</th>
-                        <th class="py-3 px-4 text-left font-semibold">Wednesday</th>
-                        <th class="py-3 px-4 text-left font-semibold">Thursday</th>
-                        <th class="py-3 px-4 text-left font-semibold">Friday</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-200">
-                    <tr class="hover:bg-indigo-50 transition-colors">
-                        <td class="py-3 px-4">8:00 AM - 9:00 AM</td>
-                        <td class="py-3 px-4">Math</td>
-                        <td class="py-3 px-4">Science</td>
-                        <td class="py-3 px-4">English</td>
-                        <td class="py-3 px-4">Math</td>
-                        <td class="py-3 px-4">Science</td>
-                    </tr>
-                    <tr class="hover:bg-indigo-50 transition-colors">
-                        <td class="py-3 px-4">9:00 AM - 10:00 AM</td>
-                        <td class="py-3 px-4">History</td>
-                        <td class="py-3 px-4">Art</td>
-                        <td class="py-3 px-4">History</td>
-                        <td class="py-3 px-4">Art</td>
-                        <td class="py-3 px-4">P.E.</td>
-                    </tr>
-                    <tr class="hover:bg-indigo-50 transition-colors">
-                        <td class="py-3 px-4">10:00 AM - 11:00 AM</td>
-                        <td class="py-3 px-4">Music</td>
-                        <td class="py-3 px-4">Coding</td>
-                        <td class="py-3 px-4">Music</td>
-                        <td class="py-3 px-4">Coding</td>
-                        <td class="py-3 px-4">Music</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Sibika Book Note Section -->
+        <div>
+            <h2 class="text-xl font-semibold text-indigo-600 mb-2">Note on Sibika Book</h2>
+            <p class="text-sm text-gray-500 mb-4">Date: August 01, 2025</p>
+
+            <p class="text-gray-700">
+                Since the Sibika book is unavailable, please study and answer the following pages:
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-gray-600 pl-4 mt-2">
+                <li>Pages 18-21</li>
+                <li>Pages 23-24</li>
+            </ul>
         </div>
+        
+        <!-- Thank you message -->
+        <p class="text-center text-gray-400 mt-6 text-sm">Thank you.</p>
+
     </div>
+
 </body>
 </html>
