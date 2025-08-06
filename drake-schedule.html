@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Announcements and Reminders</title>
-    <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -14,12 +13,9 @@
 </head>
 <body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
 
-    <!-- Main card container for all announcements -->
     <div class="bg-white max-w-xl w-full p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-200">
-        <!-- Main title -->
         <h1 class="text-3xl font-bold text-center text-indigo-700 mb-6">School Announcements & Reminders</h1>
 
-        <!-- Fire Drill Announcement Section -->
         <div class="mb-6 pb-6 border-b border-gray-200">
             <h2 class="text-xl font-semibold text-red-600 mb-2">Fire Drill Announcement</h2>
             <p class="text-sm text-gray-500 mb-4">Date: July 30, 2025</p>
@@ -34,7 +30,6 @@
             </ul>
         </div>
 
-        <!-- Nutrition Month Activity Section -->
         <div class="mb-6 pb-6 border-b border-gray-200">
             <h2 class="text-xl font-semibold text-indigo-600 mb-2">Nutrition Month Culminating Activity</h2>
             <p class="text-sm text-gray-500 mb-4">Date: July 31, 2025</p>
@@ -51,8 +46,7 @@
             </p>
         </div>
         
-        <!-- Sibika Book Note Section -->
-        <div>
+        <div class="mb-6 pb-6 border-b border-gray-200">
             <h2 class="text-xl font-semibold text-indigo-600 mb-2">Note on Sibika Book</h2>
             <p class="text-sm text-gray-500 mb-4">Date: August 01, 2025</p>
 
@@ -64,8 +58,44 @@
                 <li>Pages 23-24</li>
             </ul>
         </div>
+
+        <div class="mb-6 pb-6 border-b border-gray-200">
+            <h2 class="text-xl font-semibold text-green-700 mb-2">Upcoming Assignments</h2>
+            <p class="text-sm text-gray-500 mb-4">Date: August 4, 2025</p>
+            
+            <ul class="list-disc list-inside space-y-1 text-gray-700 pl-4">
+                <li>**Reading:** Read page 31</li>
+                <li>**Language:** Answer page 34</li>
+                <li>**Science:** Study pages 26-27</li>
+            </ul>
+            <p class="text-right text-gray-600 text-sm mt-2">P.S.</p>
+        </div>
+
+        <div class="mb-6 pb-6 border-b border-gray-200">
+            <h2 class="text-xl font-semibold text-purple-700 mb-2">Buwan ng Wika Celebration: Poetry Contest</h2>
+            <p class="text-sm text-gray-500 mb-4">Date: August 4, 2025</p>
+            
+            <p class="text-gray-700 mb-2">
+                In connection with the celebration for National Language Month (Buwan ng Wika), one of the contests is "Poetry" (Tula).
+            </p>
+            <p class="text-gray-700 mb-2">
+                Please let your child memorize the poem given. They will present it on <span class="font-medium text-purple-700">August 15, 2025</span>.
+            </p>
+            <p class="text-gray-700 mt-4">Maraming Salamat! (Thank you very much!)</p>
+            <p class="text-right text-gray-600 text-sm mt-4">Parent's Signature</p>
+            
+            <div class="mt-6 p-4 bg-purple-50 border border-purple-200 rounded-lg">
+                <h3 class="text-lg font-semibold text-purple-800 mb-2">Ang Batang Munti (The Little Child)</h3>
+                <p class="text-gray-800 leading-relaxed">
+                    Ako ay batang munti <br>
+                    Na ang tanging mithi <br>
+                    Magandang ugali <br>
+                    Mabuti ang gawi <br>
+                    Kahit na batang munti!
+                </p>
+            </div>
+        </div>
         
-        <!-- Thank you message -->
         <p class="text-center text-gray-400 mt-6 text-sm">Thank you.</p>
 
     </div>
