@@ -3,46 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedules and Information</title>
+    <title>Schedules!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        /* * We're importing 'Nunito', a font with rounded edges 
+         * which feels much friendlier and more playful than a standard font.
+        */
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap');
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Nunito', sans-serif;
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-500 to-indigo-600 min-h-screen text-gray-800 p-4 md:p-8 flex items-center justify-center">
+<!-- A bright, warm gradient background makes the page feel more cheerful. -->
+<body class="bg-gradient-to-br from-yellow-200 to-orange-300 min-h-screen p-4 flex items-center justify-center">
 
-    <div class="max-w-xl w-full mx-auto bg-white shadow-2xl rounded-3xl p-6 md:p-10 border border-gray-200 text-center">
-        <h1 class="text-3xl md:text-4xl font-extrabold text-blue-900 mb-4">
-            Welcome
+    <!-- 
+      This card has a subtle transparency (bg-white/90) and a backdrop-blur effect 
+      to give it a soft, modern look. The rounding is also increased.
+    -->
+    <div class="max-w-md w-full mx-auto bg-white/90 backdrop-blur-sm shadow-xl rounded-3xl p-8 text-center">
+        
+        <!-- The heading is larger, uses a fun color, and includes an emoji for a welcoming touch. -->
+        <h1 class="text-5xl font-extrabold text-orange-500 mb-4">
+            Hello! 👋
         </h1>
-        <p class="text-lg text-gray-600 mb-8">
-            Please select an option below to view the available schedules.
+
+        <p class="text-lg text-gray-600 mb-10">
+            Whose schedule would you like to see?
         </p>
 
-        <div class="space-y-4">
-            <!-- Button that links to the original schedule -->
-            <a href="schedule.html" class="block w-full">
-                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl w-full transition-colors duration-200 transform hover:scale-105 shadow-md">
-                    View School Schedule
-                </button>
+        <!-- The links are now styled directly as buttons, which is cleaner code. -->
+        <div class="space-y-5">
+            
+            <!-- Drake's Schedule Button -->
+            <!-- 
+              Using flexbox to align the icon and text perfectly.
+              The button is larger, more colorful, and has a more noticeable hover effect.
+            -->
+            <a href="drake-schedule.html" class="flex items-center justify-center gap-3 w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <!-- A simple user icon makes the button more visual. -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span>Drake's Schedule</span>
             </a>
             
-            <!-- Button that links to the new Drake schedule -->
-            <a href="drake-schedule.html" class="block w-full">
-                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-xl w-full transition-colors duration-200 transform hover:scale-105 shadow-md">
-                    Drake's Schedule
-                </button>
+            <!-- Dane's Schedule Button -->
+            <a href="dane-schedule.html" class="flex items-center justify-center gap-3 w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <!-- Using the same icon for consistency. -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span>Dane's Schedule</span>
             </a>
-            
-            <!-- Button that links to the new Dane schedule -->
-            <a href="dane-schedule.html" class="block w-full">
-                <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-xl w-full transition-colors duration-200 transform hover:scale-105 shadow-md">
-                    Dane's Schedule
-                </button>
-            </a>
+
         </div>
     </div>
 
