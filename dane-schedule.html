@@ -10,184 +10,155 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        .tab-pane { display: none; }
+        .tab-pane.active { display: block; }
+
+        /* Animation for the "More Info" button */
+        @keyframes pulse-light {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+        }
+        .animate-pulse-light {
+            animation: pulse-light 2.5s infinite;
+        }
+        
+        /* Styles for the pop-up modal */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800 p-4 md:p-8">
 
-    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-10 border border-gray-200">
-        <h1 class="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6 pb-2 border-b-4 border-blue-600">
-            School Calendar and Schedule (August 2025)
-        </h1>
-
-        <section class="mb-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">I. Novena Mass Schedule</h2>
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
-                    <thead class="bg-blue-600 text-white">
-                        <tr>
-                            <th class="py-3 px-4 text-left font-semibold">Date</th>
-                            <th class="py-3 px-4 text-left font-semibold">Time</th>
-                            <th class="py-3 px-4 text-left font-semibold">Mass Sponsors</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">August 6, 2025 (Wed)</td>
-                            <td class="py-3 px-4">7:00 AM</td>
-                            <td class="py-3 px-4">10 - St. Augustine, 7 - OLA</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">August 7, 2025 (Thu)</td>
-                            <td class="py-3 px-4">7:00 AM</td>
-                            <td class="py-3 px-4">10 - St. Ezekiel Moreno, 7 - OLC</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">August 8, 2025 (Fri)</td>
-                            <td class="py-3 px-4">4:00 PM</td>
-                            <td class="py-3 px-4">10 - St. Monica, 7 - OLG <span class="text-gray-500">(Schedule for ESC Recertification)</span></td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">August 9, 2025 (Sat)</td>
-                            <td class="py-3 px-4">8:00 AM <span class="block text-sm text-gray-500">(7:30) late</span></td>
-                            <td class="py-3 px-4">10 - St. Rita, 7 - OLG with the Alumni</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">August 10, 2025 (Sun)</td>
-                            <td class="py-3 px-4">8:00 AM <span class="block text-sm text-gray-500">(7:30) late</span></td>
-                            <td class="py-3 px-4">9 - Acutis, 7 - OLC with the parents (Induction of GPSTA officers and homeroom officers) please bring offers and candle</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">August 11, 2025 (Mon)</td>
-                            <td class="py-3 px-4">7:00 AM</td>
-                            <td class="py-3 px-4">9 - Calungsod 7 - OLL</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">August 12, 2025 (Tue)</td>
-                            <td class="py-3 px-4">7:00 AM</td>
-                            <td class="py-3 px-4">9 - Ruiz, 8 - St. John XXII</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">August 13, 2025 (Wed)</td>
-                            <td class="py-3 px-4">7:00 AM</td>
-                            <td class="py-3 px-4">9 - Sales, 8 - St. John Paul II</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">August 14, 2025 (Thu)</td>
-                            <td class="py-3 px-4">7:00 AM</td>
-                            <td class="py-3 px-4">8 - St. Paul VI, 8 - St. Peter, 8 - Pope Pius</td>
-                        </tr>
-                        <tr class="bg-red-50 hover:bg-red-100 transition-colors">
-                            <td class="py-3 px-4 font-bold">August 15, 2025 (Fri)</td>
-                            <td class="py-3 px-4 font-bold">7:00 AM</td>
-                            <td class="py-3 px-4 font-bold text-red-600">ALL SECTIONS - FEAST DAY</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl border border-gray-200">
+        <div class="p-6 md:p-10">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-blue-900 pb-2 mb-6 border-b-4 border-blue-600">
+                School Calendar and Schedule
+            </h1>
+            <div class="border-b border-gray-300">
+                <nav class="-mb-px flex flex-wrap gap-x-2 md:gap-x-4" aria-label="Tabs">
+                    <button class="tab-btn text-sm md:text-base whitespace-nowrap px-3 py-3 md:px-4 rounded-t-lg border-gray-300 border-t border-l border-r" data-target="july">July</button>
+                    <button class="tab-btn text-sm md:text-base whitespace-nowrap px-3 py-3 md:px-4 rounded-t-lg border-gray-300 border-t border-l border-r" data-target="august">August</button>
+                    <button class="tab-btn text-sm md:text-base whitespace-nowrap px-3 py-3 md:px-4 rounded-t-lg border-gray-300 border-t border-l border-r" data-target="september">September</button>
+                    <button class="tab-btn text-sm md:text-base whitespace-nowrap px-3 py-3 md:px-4 rounded-t-lg border-gray-300 border-t border-l border-r" data-target="october">October</button>
+                    <button class="tab-btn text-sm md:text-base whitespace-nowrap px-3 py-3 md:px-4 rounded-t-lg border-gray-300 border-t border-l border-r" data-target="november">November</button>
+                    <button class="tab-btn text-sm md:text-base whitespace-nowrap px-3 py-3 md:px-4 rounded-t-lg border-gray-300 border-t border-l border-r" data-target="december">December</button>
+                </nav>
             </div>
-            <div class="bg-yellow-50 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-md mt-4">
-                <p class="font-semibold">Note for Mass Offering:</p>
-                <p>Students are encouraged to offer dry goods (such as rice, canned goods, noodles, etc.) as their Mass offering.</p>
+        </div>
+
+        <div class="px-6 md:px-10 pb-6 md:pb-10">
+            <div id="july" class="tab-pane"> <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">July 2025</h2> <div class="bg-blue-50 text-blue-700 p-6 rounded-lg text-center"><p class="text-lg">No schedules or events posted for July.</p></div> </div>
+
+            <div id="august" class="tab-pane">
+                 <div class="space-y-8">
+                    <section>
+                        <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">I. Novena Mass Schedule</h2>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
+                                <thead class="bg-blue-600 text-white">
+                                    <tr> <th class="py-3 px-4 text-left font-semibold">Date</th> <th class="py-3 px-4 text-left font-semibold">Time</th> <th class="py-3 px-4 text-left font-semibold">Mass Sponsors</th> </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr class="hover:bg-blue-50"> <td class="py-3 px-4">August 6 (Wed)</td> <td class="py-3 px-4">7:00 AM</td> <td class="py-3 px-4">10 - St. Augustine, 7 - OLA</td> </tr>
+                                    <tr class="hover:bg-blue-50"> <td class="py-3 px-4">August 7 (Thu)</td> <td class="py-3 px-4">7:00 AM</td> <td class="py-3 px-4">10 - St. Ezekiel Moreno, 7 - OLC</td> </tr>
+                                    <tr class="hover:bg-blue-50"> <td class="py-3 px-4">August 8 (Fri)</td> <td class="py-3 px-4">4:00 PM</td> <td class="py-3 px-4">10 - St. Monica, 7 - OLG</td> </tr>
+                                    <tr class="hover:bg-blue-50"> <td class="py-3 px-4">August 9 (Sat)</td> <td class="py-3 px-4">8:00 AM</td> <td class="py-3 px-4">10 - St. Rita, 7 - OLG with the Alumni</td> </tr>
+                                    <tr class="hover:bg-blue-50"> <td class="py-3 px-4">August 10 (Sun)</td> <td class="py-3 px-4">8:00 AM</td> <td class="py-3 px-4">9 - Acutis, 7 - OLC with the parents</td> </tr>
+                                    <tr class="hover:bg-blue-50"> <td class="py-3 px-4">August 11 (Mon)</td> <td class="py-3 px-4">7:00 AM</td> <td class="py-3 px-4">9 - Calungsod 7 - OLL</td> </tr>
+                                    <tr class="hover:bg-blue-50"> <td class="py-3 px-4">August 12 (Tue)</td> <td class="py-3 px-4">7:00 AM</td> <td class="py-3 px-4">9 - Ruiz, 8 - St. John XXII</td> </tr>
+                                    <tr class="hover:bg-blue-50"> <td class="py-3 px-4">August 13 (Wed)</td> <td class="py-3 px-4">7:00 AM</td> <td class="py-3 px-4">9 - Sales, 8 - St. John Paul II</td> </tr>
+                                    <tr class="hover:bg-blue-50"> <td class="py-3 px-4">August 14 (Thu)</td> <td class="py-3 px-4">7:00 AM</td> <td class="py-3 px-4">8 - St. Paul VI, 8 - St. Peter, 8 - Pope Pius</td> </tr>
+                                    <tr class="bg-red-50 hover:bg-red-100"> <td class="py-3 px-4 font-bold">August 15 (Fri)</td> <td class="py-3 px-4 font-bold">7:00 AM</td> <td class="py-3 px-4 font-bold text-red-600">ALL SECTIONS - FEAST DAY</td> </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">IV. Other Important Dates</h2>
+                        <ul class="list-disc list-inside space-y-3 text-lg">
+                            <li><span class="font-semibold text-gray-700">Aug 21-23 (Thu-Sat):</span> INSET for Teachers (Asynchronous).</li>
+                            <li><span class="font-semibold text-gray-700">Aug 26 (Tue):</span> Faculty Development (Asynchronous).</li>
+                            <li><span class="font-semibold text-gray-700">Aug 27 (Wed):</span> Resumption of Face-to-Face Classes.</li>
+                            <li><span class="font-semibold text-gray-700">Aug 28 (Thu):</span> Buwan ng Wika Culmination (<span class="font-bold text-red-600">Filipiniana Attire</span>).</li>
+                            <li class="border-t pt-4 mt-2">
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                                    <span class="font-semibold text-gray-700 mb-2 sm:mb-0">Aug 29 (Fri): Wandering Minds Science Mobile Exhibit</span>
+                                    <button id="open-modal-btn" class="animate-pulse-light bg-blue-500 text-white font-bold text-sm py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors self-start sm:self-center">More Info</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
             </div>
-        </section>
 
-        <section class="mb-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">II. Feast Day for Our Lady of the Assumption (School Patroness)</h2>
-            <ul class="list-disc list-inside space-y-2 text-lg">
-                <li><span class="font-semibold text-gray-700">Date:</span> August 15, 2025 (Friday)</li>
-                <li><span class="font-semibold text-gray-700">Time:</span> Early Time in (7:00 AM)</li>
-                <li><span class="font-semibold text-gray-700">Celebration:</span> In celebration of the Feast Day, there will be a salo-salo during lunch. All are encouraged to participate through potluck, or catering, or any means of sharing foods as a sign of unity and shared joy on this special occasion.</li>
-            </ul>
-        </section>
-        
-        <section class="mb-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">III. Examination Schedules</h2>
-            <ul class="list-disc list-inside space-y-2 text-lg mb-6">
-                <li><span class="font-semibold text-gray-700">First Quarter Exam:</span> August 18 – 19, 2025. <span class="text-red-600 font-semibold">(Note: Please disregard other dates that may have been circulated. The official and final exam schedule is on Aug 18 & 19).</span></li>
-                <li><span class="font-semibold text-gray-700">Special Examination:</span> Only for sick students, they must present a Medical Certificate.</li>
-            </ul>
-
-            <h3 class="text-xl md:text-2xl font-semibold text-blue-700 mb-4">Monthly and Quarterly Examination Schedule</h3>
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
-                    <thead class="bg-blue-600 text-white">
-                        <tr>
-                            <th class="py-3 px-4 text-left font-semibold">Time</th>
-                            <th class="py-3 px-4 text-left font-semibold">Day 1</th>
-                            <th class="py-3 px-4 text-left font-semibold">Day 2</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">08:30 – 09:30 AM</td>
-                            <td class="py-3 px-4">Science</td>
-                            <td class="py-3 px-4">Math</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors bg-red-50">
-                            <td class="py-3 px-4 font-bold">09:30 – 09:45 AM</td>
-                            <td class="py-3 px-4 font-bold">BREAKTIME</td>
-                            <td class="py-3 px-4 font-bold">BREAKTIME</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">09:45 – 10:45 AM</td>
-                            <td class="py-3 px-4">ESP / CLE</td>
-                            <td class="py-3 px-4">English</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors bg-green-50">
-                            <td class="py-3 px-4 font-bold">10:45 – 11:45 AM</td>
-                            <td class="py-3 px-4 font-bold">LUNCH</td>
-                            <td class="py-3 px-4 font-bold">LUNCH</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">11:45 – 12:45 PM</td>
-                            <td class="py-3 px-4">Filipino</td>
-                            <td class="py-3 px-4">Araling Panlipunan</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">12:45 – 01:45 PM</td>
-                            <td class="py-3 px-4">Computer</td>
-                            <td class="py-3 px-4"></td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors bg-red-50">
-                            <td class="py-3 px-4 font-bold">01:45 – 02:00 PM</td>
-                            <td class="py-3 px-4 font-bold">BREAKTIME</td>
-                            <td class="py-3 px-4 font-bold">BREAKTIME</td>
-                        </tr>
-                        <tr class="hover:bg-blue-50 transition-colors">
-                            <td class="py-3 px-4">02:00 – 02:45 PM</td>
-                            <td class="py-3 px-4">Music and Arts</td>
-                            <td class="py-3 px-4">PE and Health</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="mb-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">IV. Other Important Dates</h2>
-            <ul class="list-disc list-inside space-y-2 text-lg">
-                <li><span class="font-semibold text-gray-700">August 21- 23, 2025 (Thurs-Sat):</span> INSET (In-Service Training for Teachers) - Asynchronous Learning thru Cerebro LMS</li>
-                <li><span class="font-semibold text-gray-700">August 26, 2025 (Tuesday):</span> Faculty Development (Asynchronous Learning thru Cerebro LMS)</li>
-                <li><span class="font-semibold text-gray-700">August 27, 2025 (Wednesday):</span> Face-to-Face Classes</li>
-                <li><span class="font-semibold text-gray-700">August 29, 2025 (Friday):</span> Buwan ng Wika Culmination (<span class="font-bold text-red-600">Filipiniana Attire</span> for students and teachers)</li>
-            </ul>
-        </section>
-
-        <section class="mb-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">V. From the Minutes of the Recent Meeting</h2>
-            <ul class="list-disc list-inside space-y-3 text-lg">
-                <li><span class="font-semibold text-gray-700">Next Monthly Meeting:</span> The next meeting will be held on the 3rd Sunday of September, with the new start time of <span class="font-bold">8:30 AM</span>.</li>
-                <li><span class="font-semibold text-gray-700">Payment Reminder:</span> The deadline for the <span class="font-bold">₱300</span> payment for the Wandering Minds Science Exhibit is on <span class="font-bold">August 22, 2025</span>.</li>
-                 <li><span class="font-semibold text-gray-700">Upcoming Intramurals:</span>
-                    <ul class="list-[circle] list-inside ml-6 mt-2 space-y-2">
-                        <li>The Intramurals are scheduled for <span class="font-bold">September 8-13, 2025</span>. Please note that September 9 is a holiday.</li>
-                        <li>The official Intramurals T-shirt will be an active-dry shirt with a white body. Sleeves will be colored to represent each year level (Green, Yellow, Red, & Blue).</li>
-                    </ul>
-                </li>
-                 <li><span class="font-semibold text-gray-700">Communication:</span> Official correspondence regarding these announcements will be sent to the respective parents.</li>
-            </ul>
-        </section>
-
+            <div id="september" class="tab-pane"> <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">September 2025</h2> <ul class="list-disc list-inside space-y-3 text-lg bg-blue-50 text-blue-800 p-6 rounded-lg"> <li><span class="font-semibold">Sep 8-13 (Mon-Sat):</span> School Intramurals Week.</li> <li class="pl-4"><span class="font-semibold text-gray-700">T-Shirt:</span> White active-dry shirt with sleeve colors per year level.</li> <li><span class="font-semibold text-red-600">Sep 9 (Tue):</span> Holiday - No events.</li> <li><span class="font-semibold">Sep 21 (Sun):</span> Monthly Meeting at <span class="font-bold">8:30 AM</span>.</li> </ul> </div>
+            <div id="october" class="tab-pane"> <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">October 2025</h2> <div class="bg-blue-50 text-blue-700 p-6 rounded-lg text-center"><p class="text-lg">Schedule coming soon...</p></div> </div>
+            <div id="november" class="tab-pane"> <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">November 2025</h2> <div class="bg-blue-50 text-blue-700 p-6 rounded-lg text-center"><p class="text-lg">Schedule coming soon...</p></div> </div>
+            <div id="december" class="tab-pane"> <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">December 2025</h2> <div class="bg-blue-50 text-blue-700 p-6 rounded-lg text-center"><p class="text-lg">Schedule coming soon...</p></div> </div>
+        </div>
     </div>
 
+    <div id="info-modal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 w-full max-w-lg max-h-full overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-blue-900">Wandering Minds Science Exhibit</h3>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-gray-800 text-3xl">&times;</button>
+            </div>
+            <div class="text-gray-700 space-y-3">
+                <p class="font-semibold">Dear Parents and Guardians,</p>
+                <p>This hands-on exhibit on <span class="font-bold">August 29, 2025,</span> is a graded requirement for the Science subject, offering interactive displays to deepen your children's understanding of science.</p>
+                <p class="font-semibold">Exhibits include:</p>
+                <ul class="list-disc list-inside ml-4 text-sm">
+                    <li>Planetarium and Astronomy Experience</li>
+                    <li>World of Artificial Intelligence & Climate Change</li>
+                    <li>Telescope lecture and Stargazing (weather permitting)</li>
+                </ul>
+                <p>A <span class="font-bold">₱300 contribution per student</span> is requested by <span class="font-bold">August 22, 2025</span>, to cover the cost.</p>
+                <p class="mt-4">- Danilo Basallo Jr., Science Teacher</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const tabs = document.querySelectorAll('.tab-btn');
+        const panes = document.querySelectorAll('.tab-pane');
+        
+        // --- Tab Logic ---
+        function setActiveTab(targetId) {
+            tabs.forEach(tab => {
+                const isTarget = tab.dataset.target === targetId;
+                tab.classList.toggle('bg-white', isTarget);
+                tab.classList.toggle('text-blue-700', isTarget);
+                tab.classList.toggle('font-semibold', isTarget);
+                tab.classList.toggle('border-b-0', isTarget);
+                tab.classList.toggle('bg-gray-50', !isTarget);
+                tab.classList.toggle('text-gray-500', !isTarget);
+                tab.classList.toggle('hover:bg-gray-100', !isTarget);
+            });
+            panes.forEach(pane => pane.classList.toggle('active', pane.id === targetId));
+        }
+        tabs.forEach(tab => tab.addEventListener('click', () => setActiveTab(tab.dataset.target)));
+        document.addEventListener('DOMContentLoaded', () => setActiveTab('august'));
+
+        // --- Modal Logic ---
+        const modal = document.getElementById('info-modal');
+        const openBtn = document.getElementById('open-modal-btn');
+        const closeBtn = document.getElementById('close-modal-btn');
+
+        const openModal = () => modal.classList.remove('hidden');
+        const closeModal = () => modal.classList.add('hidden');
+
+        openBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        
+        // Close modal if background is clicked
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
